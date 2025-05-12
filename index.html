@@ -2,14 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"> 
+  <link rel="stylesheet" href="CSS/fontSheet.css">
+  <link rel="stylesheet" href="CSS/colorsSheet.css">
+  <link rel="stylesheet" href="CSS/desktopSheet.css">
+  <link rel="stylesheet" href="CSS/mobileSheet.css">
   
   <title>Frontend Mentor | Job Listings</title>
 
+  <script defer src="JS/loadListingsScript.js"></script>
+  <script defer src="JS/addRemoveFiltersScript.js"></script>
 </head>
+
 <body>
-  
+  <div class="background">
+    <img class="bg-image-mobile" src="images/bg-header-mobile.svg">
+    <img class="bg-image-desktop" src="images/bg-header-desktop.svg">
+
+    <div class="list-and-filters-container">
+
+      <div class="job-listing-filters-control" filters-control>
+
+        <div class="filters-box" filters-box></div>
+        <button class="clear-filters-button" type="button" clear-filters-button>Clear</button>
+      </div>
+
+      <ul class="job-listings-list" job-listing-list>
+      </ul>
+    </div>
+  </div>
 </body>
+
+
 </html>
