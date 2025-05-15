@@ -16,6 +16,8 @@ function renderJobListings(jobListings) {
     jobListings.forEach(jobListingData => {
 
         const listElement = document.createElement('li');
+        listElement.classList.add('job-listing-li');
+        const dataContainer = document.createElement('div');
 
         if (jobListingData.isFeatured === true) {
 
@@ -26,16 +28,16 @@ function renderJobListings(jobListings) {
             listElement.appendChild(featuredDiv);
         }
 
-        console.log(jobListingData); //REMENBER TO DELETE
+        listElement.appendChild(dataContainer);
 
         const listingImage = document.createElement('img');
         listingImage.classList.add('logo');
         listingImage.src = jobListingData.logo;
-        listElement.appendChild(listingImage);
+        dataContainer.appendChild(listingImage);
 
         const jobListingHeader = document.createElement('div');
         jobListingHeader.classList.add('job-listing-header');
-        listElement.appendChild(jobListingHeader);
+        dataContainer.appendChild(jobListingHeader);
 
         const companyTag = document.createElement('h3');
         companyTag.classList.add('company-tag');
@@ -57,11 +59,11 @@ function renderJobListings(jobListings) {
         const positionTag = document.createElement('h3');
         positionTag.classList.add('position-tag');
         positionTag.textContent = jobListingData.position;
-        listElement.appendChild(positionTag);
+        dataContainer.appendChild(positionTag);
 
         const timeLocationTagsRow = document.createElement('div');
         timeLocationTagsRow.classList.add('time-location-tags-row');
-        listElement.appendChild(timeLocationTagsRow);
+        dataContainer.appendChild(timeLocationTagsRow);
 
         const timeTag = document.createElement('h3');
         timeTag.classList.add('created-at-tag');
@@ -80,11 +82,11 @@ function renderJobListings(jobListings) {
 
         const dataDivider = document.createElement('div');
         dataDivider.classList.add('divider');
-        listElement.appendChild(dataDivider);
+        dataContainer.appendChild(dataDivider);
 
         const languageToolRoleLevelGrid = document.createElement('div');
         languageToolRoleLevelGrid.classList.add('language-tool-role-level-tags-grid');
-        listElement.appendChild(languageToolRoleLevelGrid);
+        dataContainer.appendChild(languageToolRoleLevelGrid);
 
         const roleTag = document.createElement('Button');
         roleTag.classList.add('language-tool-role-level-tag');
@@ -114,7 +116,7 @@ function renderJobListings(jobListings) {
             languageToolRoleLevelGrid.appendChild(ToolTag);
         });
         
-        listElement.classList.add('job-listing-box');
+        dataContainer.classList.add('job-listing-box');
         jobListingList.appendChild(listElement);
     });
  }

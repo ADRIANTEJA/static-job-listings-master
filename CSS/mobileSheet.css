@@ -1,8 +1,5 @@
-html {
-    box-sizing: content-box;
-}
 
-@media (width <= 40rem) {
+@media (width < 90rem) {
 
     *, *::before, *::after {
         box-sizing: inherit;
@@ -93,7 +90,6 @@ html {
         color: var(--very-dark-grayish-cyan);
         font-size: 1.1rem;
         font-weight: 600;
-        cursor: pointer;
         border: none;
         text-align: center;
         align-self: center;
@@ -109,21 +105,26 @@ html {
         margin-top: 0.8rem;
         padding: 0;
     }
-    
-    .job-listing-box {
+
+    .job-listing-li {
         background-color: var(--white);
         border-radius: 4px;
         box-shadow:  0 5px 10px 0 rgba(0, 0, 0, 0.10);
         display: grid;
-        grid-template-rows: 1.5rem repeat(3, 2rem) 1.5px auto;
-        row-gap: 0.7rem;
-        margin-top: 3rem;
-        margin-bottom: 3rem;
+        margin-block: 3rem;
         margin-inline: 1.5rem;
     }
 
-    .job-listing-box.featured {
+    .job-listing-li.featured {
         grid-template-columns: 5px auto;
+    }
+    
+    .job-listing-box {
+        background-color: inherit;
+        border-radius: 4px;
+        display: grid;
+        grid-template-rows: 1.5rem repeat(3, 2rem) 1.5px auto;
+        row-gap: 0.7rem;
     }
 
     .featured-colored-border {
@@ -164,8 +165,7 @@ html {
         align-content: center;
         padding-top: 0.125rem;
         padding-inline: 0.25rem;
-        margin-top: 0.2rem;
-        margin-bottom: 0.2rem;
+        margin-block: 0.2rem;
     }
 
     .is-featured-tag {
@@ -177,8 +177,7 @@ html {
         align-content: center;
         padding-top: 0.125rem;
         padding-inline: 0.25rem;
-        margin-top: 0.2rem;
-        margin-bottom: 0.2rem;
+        margin-block: 0.2rem;
     }
 
     .position-tag {
@@ -193,8 +192,9 @@ html {
 
     .time-location-tags-row {
         display: grid;
-        grid-template-columns: 3.5rem 6rem 7rem;
+        grid-template-columns: repeat(3, auto);
         margin-inline: 1.2rem;
+        width: max-content;
     }
 
     .created-at-tag {
@@ -207,11 +207,12 @@ html {
         color: var(--dark-grayish-cyan);
         font-weight: 300;
         align-content: center;
+        margin-left: 0.75rem;
     }
 
     .location-contract-tag::before {
         content: "•";
-        margin-right: 0.25rem;
+        margin-right: 0.75rem;
     }
 
     .divider {
@@ -249,6 +250,4 @@ html {
         color: var(--white);
     }
 }
-
-
 

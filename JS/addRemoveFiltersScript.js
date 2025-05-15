@@ -45,6 +45,8 @@ function removeFilter(e) {
 
     filtersBox.removeChild(filterTag);
 
+    if (filtersBox.childElementCount === 0) filtersControl.style.visibility = 'hidden';
+
     renderJobListings(filterJobListings(jobListingsArray));
 }
 
@@ -53,6 +55,8 @@ function clearFilters(e) {
     e.stopPropagation();
 
     while (filtersBox.firstChild) filtersBox.removeChild(filtersBox.firstChild);
+
+    filtersControl.style.visibility = 'hidden';
 
     renderJobListings(jobListingsArray);
 }
